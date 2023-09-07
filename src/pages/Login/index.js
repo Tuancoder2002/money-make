@@ -63,7 +63,7 @@ function Login() {
                                                         className={cx('fas', 'fa-cubes', 'fa-2x', 'me-3')}
                                                         style={{ color: '#ff6219' }}
                                                     ></i>
-                                                    <span className={cx('h1', 'fw-bold', 'mb-0')}>Logo</span>
+                                                    <span className={cx('h1', 'fw-bold', 'mb-0')}>Manage Money</span>
                                                 </div>
 
                                                 <h5

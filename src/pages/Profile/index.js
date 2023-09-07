@@ -1,62 +1,117 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Profile.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGauge, faHouse, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
 function Profile() {
     return (
-        <div>
-            <nav className={cx('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light')}>
-                <button
-                    className={cx('navbar-toggler')}
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarTogglerDemo01"
-                    aria-controls="navbarTogglerDemo01"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
+        <div className={cx('container-fluid')}>
+            <div className={cx('row')}>
+                <div
+                    className={cx(
+                        'd-flex',
+                        'flex-column',
+                        'justify-content-between',
+                        'col-auto',
+                        'bg-dark',
+                        'min-vh-100',
+                    )}
                 >
-                    <span className={cx('navbar-toggler-icon')}></span>
-                </button>
-                <div className={cx('collapse', 'navbar-collapse')} id="navbarTogglerDemo01">
-                    <a className={cx('navbar-brand')} href="/">
-                        Manage Money
-                    </a>
-
-                    <ul className={cx('navbar-nav', 'mr-auto', 'mt-2', 'mt-lg-0', 'xxx')}>
-                        <li className={cx('nav-item', 'active')}>
-                            <a className={cx('nav-link')} href="/">
-                                Transactions
+                    <div className={cx('mt-4')}>
+                        <a
+                            className={cx(
+                                'text-white',
+                                'text-decoration-none',
+                                'd-flex',
+                                'align-items-center',
+                                'ms-4',
+                                'd-none',
+                                'd-sm-inline',
+                            )}
+                            role="button"
+                            href="/"
+                        >
+                            <span className={cx('fs-5','text-center')}>Make Money</span>
+                        </a>
+                        <hr className={cx('text-white', 'd-none', 'd-sm-block')} />
+                        <ul className={cx('nav', 'nav-pills', 'flex-column', 'mt-4', 'mt-sm-0')} id="menu">
+                            <li className={cx('nav-item', 'my-sm-1', 'my-2')}>
+                                <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
+                                    <FontAwesomeIcon icon={faGauge} className={cx('category__heading-icon')} />
+                                    <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Transactions</span>
+                                </a>
+                            </li>
+                            <li className={cx('nav-item', 'my-sm-1', 'my-2')}>
+                                <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
+                                    <FontAwesomeIcon icon={faHouse} className={cx('category__heading-icon')} />
+                                    <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Report</span>
+                                </a>
+                            </li>
+                            <li className={cx('nav-item', 'my-sm-1', 'my-2')}>
+                                <div className={cx('dropdown')}>
+                                    <a
+                                        className={cx('nav-link', 'text-white', 'dropdown-toggle')}
+                                        href="/"
+                                        role="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#productDropdown"
+                                        aria-expanded="false"
+                                    >
+                                        <FontAwesomeIcon icon={faTable} className={cx('category__heading-icon')} />
+                                        <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Budget</span>
+                                    </a>
+                                    <div className={cx('collapse')} id="productDropdown">
+                                        <ul className={cx('nav', 'flex-column', 'd-none', 'd-sm-inline')}>
+                                            <li>
+                                                <a className={cx('nav-link', 'text-white')} href="/">
+                                                    Item 1
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a className={cx('nav-link', 'text-white')} href="/">
+                                                    Item 2
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className={cx('nav-item', 'my-1')}>
+                                <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
+                                    <FontAwesomeIcon icon={faUser} className={cx('category__heading-icon')} />
+                                    <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Help</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div className={cx('dropdown-open')}>
+                            <a
+                                className={cx('btn', 'border-none', 'outline-none', 'dropdown-toggle', 'text-white')}
+                                type="button"
+                                id="triggerId2"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                href="/"
+                            >
+                                <FontAwesomeIcon icon={faUser} />
+                                <span className={cx('ms-1', 'd-none', 'd-sm-inline')}>Yourselt</span>
                             </a>
-                        </li>
-                        <li className={cx('nav-item')}>
-                            <a className={cx('nav-link')} href="/">
-                                Report
-                            </a>
-                        </li>
-                        <li className={cx('nav-item')}>
-                            <a className={cx('nav-link', 'disabled')} href="/">
-                                Store
-                            </a>
-                        </li>
-                        <li>
-                            <form className={cx('form-inline', 'my-2', 'my-lg-0')}>
-                                <input
-                                    className={cx('form-control', 'mr-sm-2')}
-                                    type="search"
-                                    placeholder="Search"
-                                    aria-label="Search"
-                                />
-                            </form>
-                        </li>
-                    </ul>
-
-                    <button className={cx('btn', 'btn-outline-success', 'my-2', 'my-sm-0')} type="submit">
-                        Search
-                    </button>
+                            <div className={cx('dropdown-menu')} aria-labelledby="triggerId2">
+                                <a className={cx('dropdown-item', 'my-1')} href="/">
+                                   My Account
+                                </a>
+                                <a className={cx('dropdown-item')} href="/">
+                                    Categories
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+            </div>
         </div>
     );
 }
