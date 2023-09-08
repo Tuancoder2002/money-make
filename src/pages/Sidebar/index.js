@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './Profile.module.scss';
+import styles from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGauge, faHouse, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBookOpenReader, faQuestion, faSquare, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -11,14 +11,7 @@ function Profile() {
         <div className={cx('container-fluid')}>
             <div className={cx('row')}>
                 <div
-                    className={cx(
-                        'd-flex',
-                        'flex-column',
-                        'justify-content-between',
-                        'col-auto',
-                        'bg-dark',
-                        'min-vh-100',
-                    )}
+                    className={cx('d-flex', 'flex-column', 'justify-content-between', 'col-auto', 'bg-dark', 'vh-100','xxx')}
                 >
                     <div className={cx('mt-4')}>
                         <a
@@ -34,19 +27,20 @@ function Profile() {
                             role="button"
                             href="/"
                         >
-                            <span className={cx('fs-5','text-center')}>Make Money</span>
+                            <FontAwesomeIcon icon={faBars} className={cx('category__heading-icon')} />
+                            <span className={cx('fs-5', 'text-center', 'ms-2')}>Make Money</span>
                         </a>
                         <hr className={cx('text-white', 'd-none', 'd-sm-block')} />
                         <ul className={cx('nav', 'nav-pills', 'flex-column', 'mt-4', 'mt-sm-0')} id="menu">
                             <li className={cx('nav-item', 'my-sm-1', 'my-2')}>
                                 <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
-                                    <FontAwesomeIcon icon={faGauge} className={cx('category__heading-icon')} />
+                                    <FontAwesomeIcon icon={faSquare} className={cx('category__heading-icon')} />
                                     <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Transactions</span>
                                 </a>
                             </li>
                             <li className={cx('nav-item', 'my-sm-1', 'my-2')}>
                                 <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
-                                    <FontAwesomeIcon icon={faHouse} className={cx('category__heading-icon')} />
+                                    <FontAwesomeIcon icon={faBookOpenReader} className={cx('category__heading-icon')} />
                                     <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Report</span>
                                 </a>
                             </li>
@@ -81,35 +75,37 @@ function Profile() {
                             </li>
                             <li className={cx('nav-item', 'my-1')}>
                                 <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
-                                    <FontAwesomeIcon icon={faUser} className={cx('category__heading-icon')} />
+                                    <FontAwesomeIcon icon={faQuestion} className={cx('category__heading-icon')} />
                                     <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Help</span>
                                 </a>
                             </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div className={cx('dropdown-open')}>
-                            <a
-                                className={cx('btn', 'border-none', 'outline-none', 'dropdown-toggle', 'text-white')}
-                                type="button"
-                                id="triggerId2"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                                href="/"
-                            >
-                                <FontAwesomeIcon icon={faUser} />
-                                <span className={cx('ms-1', 'd-none', 'd-sm-inline')}>Yourselt</span>
+                            <li className={cx('nav-item', 'my-1')}>
+                            <div className={cx('dropdown-open')}>
+                        <a
+                            className={cx('btn', 'border-none', 'outline-none', 'dropdown-toggle', 'text-white')}
+                            type="button"
+                            id="triggerId2"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            href="/"
+                        >
+                            <FontAwesomeIcon icon={faUser} />
+                            <span className={cx('ms-1', 'd-none', 'd-sm-inline')}>Yourselt</span>
+                        </a>
+                        <div className={cx('dropdown-menu')} aria-labelledby="triggerId2">
+                            <a className={cx('dropdown-item', 'my-1')} href="/">
+                                My Account
                             </a>
-                            <div className={cx('dropdown-menu')} aria-labelledby="triggerId2">
-                                <a className={cx('dropdown-item', 'my-1')} href="/">
-                                   My Account
-                                </a>
-                                <a className={cx('dropdown-item')} href="/">
-                                    Categories
-                                </a>
-                            </div>
+                            <a className={cx('dropdown-item')} href="/">
+                                Categories
+                            </a>
                         </div>
                     </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
