@@ -5,4 +5,11 @@
     background-color: #dbdbdb;
   }
   
-  
+  .app__wrapper{
+    display: flex;
+    height: 100%;
+  }
+
+  .app__sidebar{
+    display: block;
+  }

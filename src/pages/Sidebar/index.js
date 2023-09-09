@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faBookOpenReader, faQuestion, faSquare, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBookOpenReader, faSquare, faTable, faUser, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -75,8 +75,8 @@ function Profile() {
                             </li>
                             <li className={cx('nav-item', 'my-1')}>
                                 <a className={cx('nav-link', 'text-white')} href="/" aria-current="page">
-                                    <FontAwesomeIcon icon={faQuestion} className={cx('category__heading-icon')} />
-                                    <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Help</span>
+                                    <FontAwesomeIcon icon={faWallet} className={cx('category__heading-icon')} />
+                                    <span className={cx('ms-2', 'd-none', 'd-sm-inline')}>Categories</span>
                                 </a>
                             </li>
                             <li className={cx('nav-item', 'my-1')}>
@@ -97,7 +97,7 @@ function Profile() {
                                 My Account
                             </a>
                             <a className={cx('dropdown-item')} href="/">
-                                Categories
+                                Sign out
                             </a>
                         </div>
                     </div>

@@ -30,18 +30,18 @@ function Header() {
                                         style={{ width: '40px', height: '40px' }} // Điều chỉnh kích thước của avatar theo ý muốn
                                     />
                                     <div className={cx('d-flex', 'flex-column', 'align-items-start')}>
-                                        <span className={cx('fs-5', 'text-white', 'mb-0')}>Account Name</span>
-                                        <span className={cx('text-white', 'fs-6', 'mb-0')}>500.000đ</span>
+                                        <span className={cx('fs-5', 'text-white', 'mb-0')}>Tuấn Trần</span>
+                                        <span className={cx('text-white', 'fs-6', 'mb-0')}>5.000.000đ</span>
                                     </div>
                                     <FontAwesomeIcon icon={faChevronDown} className={cx('text-white', 'ms-2')} />
 
                                 </a>
                                 <div className={cx('dropdown-menu')} aria-labelledby="triggerId2">
                                     <a className={cx('dropdown-item', 'my-1')} href="/">
-                                        My Account
+                                        Ví 1 - Tiền mặt
                                     </a>
                                     <a className={cx('dropdown-item')} href="/">
-                                        Categories
+                                        Ví 2 - Thẻ tín dụng
                                     </a>
                                 </div>
                             </div>
